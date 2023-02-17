@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Miladabdi\PersianFaker\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class PersianFakerCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'persian-faker';
 
     public $description = 'My command';
 

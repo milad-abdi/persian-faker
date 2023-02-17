@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "milad-abdi/persian-faker",
+    "description": "This is my package persian-faker",
     "keywords": [
-        ":vendor_name",
+        "milad-abdi",
         "laravel",
-        ":package_slug"
+        "persian-faker"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/milad-abdi/persian-faker",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "milad abdi",
+            "email": "milad8742@gmail.com",
             "role": "Developer"
         }
     ],
@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Miladabdi\\PersianFaker\\": "src",
+            "Miladabdi\\PersianFaker\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Miladabdi\\PersianFaker\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -61,10 +61,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Miladabdi\\PersianFaker\\PersianFakerServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "PersianFaker": "Miladabdi\\PersianFaker\\Facades\\PersianFaker"
             }
         }
     },
