@@ -8,6 +8,9 @@ on:
 jobs:
   php-code-styling:
     runs-on: ubuntu-latest
+    credentials:
+      username: ${{ github.actor }}
+      password: ${{ secrets.ghcr_token }}
 
     steps:
       - name: Checkout code
