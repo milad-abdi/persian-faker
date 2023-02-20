@@ -9,6 +9,9 @@ namespace Miladabdi\PersianFaker\Generator;
  * @method string country()
  * @method string address()
  * @method string job()
+ * @method string bank()
+ * @method string sheba()
+ * @method string cardNumber()
  */
 class Generator
 {
