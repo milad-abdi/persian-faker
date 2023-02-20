@@ -8,6 +8,7 @@ namespace Miladabdi\PersianFaker\Generator;
  * @method string state()
  * @method string country()
  * @method string address()
+ * @method string job()
  */
 class Generator
 {
