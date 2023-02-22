@@ -12,6 +12,10 @@ namespace Miladabdi\PersianFaker\Generator;
  * @method string bank()
  * @method string sheba()
  * @method string cardNumber()
+ * @method string name()
+ * @method string lastName()
+ * @method string certificate()
+ * @method string email()
  */
 class Generator
 {
