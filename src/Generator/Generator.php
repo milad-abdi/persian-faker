@@ -19,12 +19,14 @@ namespace Miladabdi\PersianFaker\Generator;
  * @method string phone($operator = null)
  * @method string sentence()
  * @method string paragraph()
+ * @method string productCategory()
+ * @method string productTitle()
  */
 class Generator
 {
     private $path = 'Miladabdi\PersianFaker\Provider\\';
 
-    protected static array $providers = ['Address', 'Company', 'Payment', 'Person', 'PhoneNumber', 'Text'];
+    protected static array $providers = ['Address', 'Company', 'Payment', 'Person', 'PhoneNumber', 'Text', 'Product'];
 
     public function __get(string $attribute)
     {
