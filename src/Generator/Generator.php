@@ -15,7 +15,8 @@ namespace Miladabdi\PersianFaker\Generator;
  * @method string name()
  * @method string lastName()
  * @method string certificate()
- * @method string email()
+ * @method string email($operator = null)
+ * @method string phone($operator = null)
  */
 class Generator
 {
