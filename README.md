@@ -13,38 +13,36 @@ You can install the package via composer:
 composer require milad-abdi/persian-faker
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="persian-faker-migrations"
-php artisan migrate
-```
-
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="persian-faker-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="persian-faker-views"
-```
-
 ## Usage
 
+
+Create fake data Use `Miladabdi\PersianFaker\PersianFaker` to create and initialize a faker generator, which can generate data by calling methods named after the type of data you want.
+
+## Example
+
+
 ```php
-$persianFaker = new Miladabdi\PersianFaker();
-echo $persianFaker->echoPhrase('Hello, Miladabdi!');
+$faker = \Miladabdi\PersianFaker\PersianFaker::create();
+
+$faker->word() //ساعت
+$faker->state() //تهران
+$faker->country() //آفریقای جنوبی
+$faker->address() //خیابان آزادی ،نبش خیابان رودکی
+$faker->job() //آرایشگر
+$faker->bank() //بانک صادرات
+$faker->sheba() //IR222858082460621046509226
+$faker->cardNumber() //4563440120604719
+$faker->name() //علی
+$faker->lastName() // کریمی
+$faker->certificate() //لیسانس
+$faker->email() //Shayne@yahoo.com
+$faker->phone() //09222770548
+$faker->sentence() //تاریخ دو بار تکرار میشود : یکی به صورت تراژدی و دیگری به صورت کمدی.
+$faker->paragraph() // متن طولانی
+$faker->productCategory() //هدفون بیسیم
+$faker->productTitle() //لپ تاپ 15.6 اینچی ایسوس مدل VivoBook
 ```
+
 
 ## Testing
 
