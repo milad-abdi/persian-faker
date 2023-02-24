@@ -2,8 +2,6 @@
 
 namespace Miladabdi\PersianFaker\Provider;
 
-use function Pest\Laravel\seed;
-
 class Address extends Base
 {
     protected static array $country = [
