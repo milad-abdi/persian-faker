@@ -38,7 +38,7 @@ class Generator
       return $this->getParams($attribute);
     }
 
-    public function getParams($attribute)
+    private function getParams($attribute)
     {
         foreach (self::$providers as $provider) {
             if (method_exists(new ($this->path . $provider), $attribute)) {
