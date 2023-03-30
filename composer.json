@@ -35,8 +35,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Miladabdi\\PersianFaker\\": "src",
-            "Miladabdi\\PersianFaker\\Database\\Factories\\": "database/factories"
+            "Miladabdi\\PersianFaker\\": "src"
         }
     },
     "autoload-dev": {
