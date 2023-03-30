@@ -5,6 +5,7 @@ namespace Miladabdi\PersianFaker\Generator;
 
 use Illuminate\Support\Str;
 use Miladabdi\PersianFaker\Provider\Text;
+use Symfony\Component\Finder\Finder;
 
 /**
  * @method Text text()
@@ -25,8 +26,6 @@ use Miladabdi\PersianFaker\Provider\Text;
  */
 class Generator
 {
-    protected static array $providers = ['Address', 'Company', 'Payment', 'Person', 'PhoneNumber', 'Text', 'Product'];
-
     public function __get(string $attribute)
     {
         return $this->getParams($attribute);
@@ -46,16 +45,30 @@ class Generator
         return $srcNamespace . 'Provider\\';
     }
 
+    public static function providers(): array
+    {
+        $providers   = [];
+        $finderFiles = Finder::create()->in(__DIR__ . '\\..\\Provider\\')->name('*.php')->files();
+
+        foreach ($finderFiles as $file) {
+            $providers[] = $file->getFilename();
+        }
+
+        return $providers;
+    }
+
     private function getParams($attribute)
     {
-        foreach (self::$providers as $provider) {
+        foreach (self::providers() as $providerClass) {
 
-            if (method_exists(new ($this->getProviderPath() . $provider), $attribute)) {
-                return (new ($this->getProviderPath() . $provider))->$attribute();
+            $providerName = explode('.php',$providerClass)[0];
+
+            if (method_exists(new ($this->getProviderPath() . $providerName), $attribute)) {
+                return (new ($this->getProviderPath() . $providerName))->$attribute();
             }
 
-            if (Str::lower($provider) == $attribute) {
-                return (new ($this->getProviderPath() . $provider));
+            if (Str::lower($providerName) == $attribute) {
+                return (new ($this->getProviderPath() . $providerName));
             }
         }
 

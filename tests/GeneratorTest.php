@@ -9,3 +9,8 @@ it('get provider path', function () {
     $this->assertEquals('Miladabdi\PersianFaker\Provider\\',$generator->getProviderPath());
 
 });
+
+it('get providers classes', function () {
+
+    $this->assertIsArray(PackageGenerator::providers());
+});
