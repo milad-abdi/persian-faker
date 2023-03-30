@@ -25,8 +25,6 @@ use Miladabdi\PersianFaker\Provider\Text;
  */
 class Generator
 {
-    private $path = 'Miladabdi\PersianFaker\Provider\\';
-
     protected static array $providers = ['Address', 'Company', 'Payment', 'Person', 'PhoneNumber', 'Text', 'Product'];
 
     public function __get(string $attribute)
@@ -39,16 +37,25 @@ class Generator
         return $this->getParams($attribute);
     }
 
+    public function getProviderPath(): string
+    {
+        $composerJsonPath = __DIR__ . '\\..\\..\\composer.json';
+        $composerConfig   = json_decode(file_get_contents($composerJsonPath));
+        $srcNamespace     = array_keys(((array)$composerConfig->autoload->{'psr-4'}))[0];
+
+        return $srcNamespace . 'Provider\\';
+    }
+
     private function getParams($attribute)
     {
         foreach (self::$providers as $provider) {
 
-            if (method_exists(new ($this->path . $provider), $attribute)) {
-                return (new ($this->path . $provider))->$attribute();
+            if (method_exists(new ($this->getProviderPath() . $provider), $attribute)) {
+                return (new ($this->getProviderPath() . $provider))->$attribute();
             }
 
             if (Str::lower($provider) == $attribute) {
-                return (new ($this->path . $provider));
+                return (new ($this->getProviderPath() . $provider));
             }
         }
 
