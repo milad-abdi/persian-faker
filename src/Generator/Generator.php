@@ -4,14 +4,13 @@ namespace Miladabdi\PersianFaker\Generator;
 
 
 use Illuminate\Support\Str;
+use Miladabdi\PersianFaker\Provider\Location;
 use Miladabdi\PersianFaker\Provider\Text;
 use Symfony\Component\Finder\Finder;
 
 /**
  * @method Text text()
- * @method string state()
- * @method string country()
- * @method string address()
+ * @method Location location()
  * @method string job()
  * @method string bank()
  * @method string sheba()

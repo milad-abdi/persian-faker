@@ -24,12 +24,15 @@ Create fake data Use `Miladabdi\PersianFaker\PersianFaker` to create and initial
 ```php
 $faker = \Miladabdi\PersianFaker\PersianFaker::create();
 
+// simple text
 $faker->text()->word() //ساعت
 $faker->text()->sentence() //تاریخ دو بار تکرار میشود : یکی به صورت تراژدی و دیگری به صورت کمدی.
 $faker->text()->paragraph() // متن طولانی
-$faker->state() //تهران
-$faker->country() //آفریقای جنوبی
-$faker->address() //خیابان آزادی ،نبش خیابان رودکی
+
+// locations type
+$faker->location()->state() //تهران
+$faker->location()->country() //آفریقای جنوبی
+$faker->location()->address() //خیابان آزادی ،نبش خیابان رودکی
 $faker->job() //آرایشگر
 $faker->bank() //بانک صادرات
 $faker->sheba() //IR222858082460621046509226
