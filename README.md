@@ -33,10 +33,12 @@ $faker->text()->paragraph() // متن طولانی
 $faker->location()->state() //تهران
 $faker->location()->country() //آفریقای جنوبی
 $faker->location()->address() //خیابان آزادی ،نبش خیابان رودکی
+
+// payments type
+$faker->payment()->bank() //بانک صادرات
+$faker->payment()->sheba() //IR222858082460621046509226
+$faker->payment()->cardNumber() //4563440120604719
 $faker->job() //آرایشگر
-$faker->bank() //بانک صادرات
-$faker->sheba() //IR222858082460621046509226
-$faker->cardNumber() //4563440120604719
 $faker->name() //علی
 $faker->lastName() // کریمی
 $faker->certificate() //لیسانس

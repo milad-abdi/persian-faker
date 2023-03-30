@@ -5,16 +5,15 @@ namespace Miladabdi\PersianFaker\Generator;
 
 use Illuminate\Support\Str;
 use Miladabdi\PersianFaker\Provider\Location;
+use Miladabdi\PersianFaker\Provider\Payment;
 use Miladabdi\PersianFaker\Provider\Text;
 use Symfony\Component\Finder\Finder;
 
 /**
  * @method Text text()
  * @method Location location()
+ * @method Payment payment()
  * @method string job()
- * @method string bank()
- * @method string sheba()
- * @method string cardNumber()
  * @method string name()
  * @method string lastName()
  * @method string certificate()
