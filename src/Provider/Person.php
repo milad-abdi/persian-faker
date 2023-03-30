@@ -183,6 +183,11 @@ class Person extends FakerProvider
         'دیپلم', 'لیسانس', 'فوق لیسانس', 'دکترا', 'سیکل'
     ];
 
+    protected static array $job = [
+        'برنامه نوسی', 'مسئول پشتیبانی', 'فروشنده', 'بازاریاب', 'طراح',
+        'گرافیست', 'کارگردان', 'هنرپیشه', 'آرایشگر', 'خیاط', 'عکاس', 'ورزشکار', 'پلیس', 'استاد دانشگاه', 'معلم', 'پزشک', 'پرستار', 'مدیر', 'آشپز'
+    ];
+
     protected static array $operator = ['gmail.com', 'yahoo.com', 'outlook.com', 'mihanmail.ir', 'chmail.ir'];
 
     public function name(): string
@@ -207,5 +212,21 @@ class Person extends FakerProvider
         }
 
         return self::randomElement(self::$firstNameMale) . rand(11111, 99999) . '@' . $operator;
+    }
+
+    public function phone($operator = null): string
+    {
+        $number = match ($operator) {
+            'mci' => '0912',
+            'rightel' => '0921',
+            'irancell' => '0935',
+            default => '09' . mt_rand(10, 99),
+        };
+        return $number . mt_rand(1000000, 9999999);
+    }
+
+    public function job(): string
+    {
+        return self::randomElement(self::$job);
     }
 }

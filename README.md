@@ -34,16 +34,19 @@ $faker->location()->state() //تهران
 $faker->location()->country() //آفریقای جنوبی
 $faker->location()->address() //خیابان آزادی ،نبش خیابان رودکی
 
-// payments type
+// payments info
 $faker->payment()->bank() //بانک صادرات
 $faker->payment()->sheba() //IR222858082460621046509226
 $faker->payment()->cardNumber() //4563440120604719
-$faker->job() //آرایشگر
-$faker->name() //علی
-$faker->lastName() // کریمی
-$faker->certificate() //لیسانس
-$faker->email() //Shayne@yahoo.com
-$faker->phone() //09222770548
+
+// Person info
+$faker->person()->job() //آرایشگر
+$faker->person()->name() //علی
+$faker->person()->lastName() // کریمی
+$faker->person()->certificate() //لیسانس
+$faker->person()->email() //Shayne@yahoo.com
+$faker->person()->phone() //09222770548
+
 $faker->productCategory() //هدفون بیسیم
 $faker->productTitle() //لپ تاپ 15.6 اینچی ایسوس مدل VivoBook
 ```
