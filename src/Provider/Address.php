@@ -2,7 +2,7 @@
 
 namespace Miladabdi\PersianFaker\Provider;
 
-class Address extends Base
+class Address extends FakerProvider
 {
     protected static array $country = [
         'آبخاز', 'آرژانتین', 'آفریقای جنوبی', 'آلبانی', 'آلمان', 'آنتیگوا و باربودا', 'آندورا', 'آنگولا',

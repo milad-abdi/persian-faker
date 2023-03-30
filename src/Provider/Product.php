@@ -2,7 +2,7 @@
 
 namespace Miladabdi\PersianFaker\Provider;
 
-class Product extends Base
+class Product extends FakerProvider
 {
     protected static array $productCategory = [
         'موبایل',

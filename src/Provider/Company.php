@@ -2,7 +2,7 @@
 
 namespace Miladabdi\PersianFaker\Provider;
 
-class Company extends Base
+class Company extends FakerProvider
 {
     protected static array $job = [
         'برنامه نوسی', 'مسئول پشتیبانی', 'فروشنده', 'بازاریاب', 'طراح',
