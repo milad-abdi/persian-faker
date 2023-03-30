@@ -38,7 +38,7 @@ class Generator
 
     public function getProviderPath(): string
     {
-        $composerJsonPath = __DIR__ . '\\..\\..\\composer.json';
+        $composerJsonPath = __DIR__ . '//..//..//composer.json';
         $composerConfig   = json_decode(file_get_contents($composerJsonPath));
         $srcNamespace     = array_keys(((array)$composerConfig->autoload->{'psr-4'}))[0];
 
@@ -48,7 +48,7 @@ class Generator
     public static function providers(): array
     {
         $providers   = [];
-        $finderFiles = Finder::create()->in(__DIR__ . '\\..\\Provider\\')->name('*.php')->files();
+        $finderFiles = Finder::create()->in(__DIR__ . '//..//Provider//')->name('*.php')->files();
 
         foreach ($finderFiles as $file) {
             $providers[] = $file->getFilename();
