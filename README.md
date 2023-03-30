@@ -24,7 +24,9 @@ Create fake data Use `Miladabdi\PersianFaker\PersianFaker` to create and initial
 ```php
 $faker = \Miladabdi\PersianFaker\PersianFaker::create();
 
-$faker->word() //ساعت
+$faker->text()->word() //ساعت
+$faker->text()->sentence() //تاریخ دو بار تکرار میشود : یکی به صورت تراژدی و دیگری به صورت کمدی.
+$faker->text()->paragraph() // متن طولانی
 $faker->state() //تهران
 $faker->country() //آفریقای جنوبی
 $faker->address() //خیابان آزادی ،نبش خیابان رودکی
@@ -37,8 +39,6 @@ $faker->lastName() // کریمی
 $faker->certificate() //لیسانس
 $faker->email() //Shayne@yahoo.com
 $faker->phone() //09222770548
-$faker->sentence() //تاریخ دو بار تکرار میشود : یکی به صورت تراژدی و دیگری به صورت کمدی.
-$faker->paragraph() // متن طولانی
 $faker->productCategory() //هدفون بیسیم
 $faker->productTitle() //لپ تاپ 15.6 اینچی ایسوس مدل VivoBook
 ```
