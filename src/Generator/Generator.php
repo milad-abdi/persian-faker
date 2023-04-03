@@ -3,46 +3,66 @@
 namespace Miladabdi\PersianFaker\Generator;
 
 
+use Illuminate\Support\Str;
+use Miladabdi\PersianFaker\Provider\Location;
+use Miladabdi\PersianFaker\Provider\Payment;
+use Miladabdi\PersianFaker\Provider\Person;
+use Miladabdi\PersianFaker\Provider\Text;
+use Symfony\Component\Finder\Finder;
+
 /**
- * @method string word()
- * @method string state()
- * @method string country()
- * @method string address()
- * @method string job()
- * @method string bank()
- * @method string sheba()
- * @method string cardNumber()
- * @method string name()
- * @method string lastName()
- * @method string certificate()
- * @method string email($operator = null)
- * @method string phone($operator = null)
- * @method string sentence()
- * @method string paragraph()
+ * @method Text text()
+ * @method Location location()
+ * @method Payment payment()
+ * @method Person person()
  * @method string productCategory()
  * @method string productTitle()
  */
 class Generator
 {
-    private $path = 'Miladabdi\PersianFaker\Provider\\';
-
-    protected static array $providers = ['Address', 'Company', 'Payment', 'Person', 'PhoneNumber', 'Text', 'Product'];
-
     public function __get(string $attribute)
     {
-      return $this->getParams($attribute);
+        return $this->getParams($attribute);
     }
 
     public function __call(string $attribute, array $arguments)
     {
-      return $this->getParams($attribute);
+        return $this->getParams($attribute);
+    }
+
+    public function getProviderPath(): string
+    {
+        $composerJsonPath = __DIR__ . '//..//..//composer.json';
+        $composerConfig   = json_decode(file_get_contents($composerJsonPath));
+        $srcNamespace     = array_keys(((array)$composerConfig->autoload->{'psr-4'}))[0];
+
+        return $srcNamespace . 'Provider\\';
+    }
+
+    public static function providers(): array
+    {
+        $providers   = [];
+        $finderFiles = Finder::create()->in(__DIR__ . '//..//Provider//')->name('*.php')->files();
+
+        foreach ($finderFiles as $file) {
+            $providers[] = $file->getFilename();
+        }
+
+        return $providers;
     }
 
     private function getParams($attribute)
     {
-        foreach (self::$providers as $provider) {
-            if (method_exists(new ($this->path . $provider), $attribute)) {
-                return (new ($this->path.$provider))->$attribute();
+        foreach (self::providers() as $providerClass) {
+
+            $providerName = explode('.php',$providerClass)[0];
+
+            if (method_exists(new ($this->getProviderPath() . $providerName), $attribute)) {
+                return (new ($this->getProviderPath() . $providerName))->$attribute();
+            }
+
+            if (Str::lower($providerName) == $attribute) {
+                return (new ($this->getProviderPath() . $providerName));
             }
         }
 

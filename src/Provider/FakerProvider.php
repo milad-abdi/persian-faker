@@ -2,7 +2,7 @@
 
 namespace Miladabdi\PersianFaker\Provider;
 
-class Base
+class FakerProvider
 {
     public static function randomElement($array)
     {

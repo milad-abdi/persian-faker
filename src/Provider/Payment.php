@@ -2,7 +2,7 @@
 
 namespace Miladabdi\PersianFaker\Provider;
 
-class Payment extends Base
+class Payment extends FakerProvider
 {
     protected static array $bank = [
         ' بانک مرکزی',
