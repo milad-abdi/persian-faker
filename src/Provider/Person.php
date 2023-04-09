@@ -147,10 +147,10 @@ class Person extends FakerProvider
         'میرزایی',
         'سپهرزاده',
         'لاهوتی',
-        'انگوتی'
+        'انگوتی',
     ];
 
-    protected static array $firstNameMale = array(
+    protected static array $firstNameMale = [
         'Aaron', 'Abdiel', 'Abdul', 'Abdullah', 'Abe', 'Abel', 'Abelardo', 'Abner', 'Abraham', 'Adalberto', 'Adam', 'Adan', 'Adelbert', 'Adolf', 'Adolfo', 'Adolph', 'Adolphus', 'Adonis', 'Adrain', 'Adrian', 'Adriel', 'Adrien', 'Afton', 'Agustin', 'Ahmad', 'Ahmed', 'Aidan', 'Aiden', 'Akeem', 'Al', 'Alan', 'Albert', 'Alberto', 'Albin', 'Alden', 'Alec', 'Alejandrin', 'Alek', 'Alessandro', 'Alex', 'Alexander', 'Alexandre', 'Alexandro', 'Alexie', 'Alexis', 'Alexys', 'Alexzander', 'Alf', 'Alfonso', 'Alfonzo', 'Alford', 'Alfred', 'Alfredo', 'Ali', 'Allan', 'Allen', 'Alphonso', 'Alvah', 'Alvis', 'Amani', 'Amari', 'Ambrose', 'Americo', 'Amir', 'Amos', 'Amparo', 'Anastacio', 'Anderson', 'Andre', 'Andres', 'Andrew', 'Andy', 'Angel', 'Angelo', 'Angus', 'Anibal', 'Ansel', 'Ansley', 'Anthony', 'Antone', 'Antonio', 'Antwan', 'Antwon', 'Arch', 'Archibald', 'Arden', 'Arely', 'Ari', 'Aric', 'Ariel', 'Arjun', 'Arlo', 'Armand', 'Armando', 'Armani', 'Arnaldo', 'Arne', 'Arno', 'Arnold', 'Arnoldo', 'Arnulfo', 'Aron', 'Art', 'Arthur', 'Arturo', 'Arvel', 'Arvid', 'Ashton', 'August', 'Augustus', 'Aurelio', 'Austen', 'Austin', 'Austyn', 'Avery', 'Axel', 'Ayden',
         'Bailey', 'Barney', 'Baron', 'Barrett', 'Barry', 'Bart', 'Bartholome', 'Barton', 'Baylee', 'Beau', 'Bell', 'Ben', 'Benedict', 'Benjamin', 'Bennett', 'Bennie', 'Benny', 'Benton', 'Bernard', 'Bernardo', 'Bernhard', 'Bernie', 'Berry', 'Berta', 'Bertha', 'Bertram', 'Bertrand', 'Bill', 'Billy', 'Blair', 'Blaise', 'Blake', 'Blaze', 'Bo', 'Bobbie', 'Bobby', 'Boris', 'Boyd', 'Brad', 'Braden', 'Bradford', 'Bradley', 'Bradly', 'Brady', 'Braeden', 'Brain', 'Brando', 'Brandon', 'Brandt', 'Brannon', 'Branson', 'Brant', 'Braulio', 'Braxton', 'Brayan', 'Brendan', 'Brenden', 'Brendon', 'Brennan', 'Brennon', 'Brent', 'Bret', 'Brett', 'Brian', 'Brice', 'Brock', 'Broderick', 'Brody', 'Brook', 'Brooks', 'Brown', 'Bruce', 'Bryce', 'Brycen', 'Bryon', 'Buck', 'Bud', 'Buddy', 'Buford', 'Burley', 'Buster',
         'Cade', 'Caden', 'Caesar', 'Cale', 'Caleb', 'Camden', 'Cameron', 'Camren', 'Camron', 'Camryn', 'Candelario', 'Candido', 'Carey', 'Carleton', 'Carlo', 'Carlos', 'Carmel', 'Carmelo', 'Carmine', 'Carol', 'Carroll', 'Carson', 'Carter', 'Cary', 'Casey', 'Casimer', 'Casimir', 'Casper', 'Ceasar', 'Cecil', 'Cedrick', 'Celestino', 'Cesar', 'Chad', 'Chadd', 'Chadrick', 'Chaim', 'Chance', 'Chandler', 'Charles', 'Charley', 'Charlie', 'Chase', 'Chauncey', 'Chaz', 'Chelsey', 'Chesley', 'Chester', 'Chet', 'Chris', 'Christ', 'Christian', 'Christop', 'Christophe', 'Christopher', 'Cicero', 'Cielo', 'Clair', 'Clark', 'Claud', 'Claude', 'Clay', 'Clemens', 'Clement', 'Cleo', 'Cletus', 'Cleve', 'Cleveland', 'Clifford', 'Clifton', 'Clint', 'Clinton', 'Clovis', 'Cloyd', 'Clyde', 'Coby', 'Cody', 'Colby', 'Cole', 'Coleman', 'Colin', 'Collin', 'Colt', 'Colten', 'Colton', 'Columbus', 'Conner', 'Connor', 'Conor', 'Conrad', 'Constantin', 'Consuelo', 'Cooper', 'Corbin', 'Cordelia', 'Cordell', 'Cornelius', 'Cornell', 'Cortez', 'Cory', 'Coty', 'Coy', 'Craig', 'Crawford', 'Cristian', 'Cristina', 'Cristobal', 'Cristopher', 'Cruz', 'Cullen', 'Curt', 'Curtis', 'Cyril', 'Cyrus',
@@ -176,16 +176,15 @@ class Person extends FakerProvider
         'Wade', 'Waino', 'Waldo', 'Walker', 'Wallace', 'Walter', 'Walton', 'Ward', 'Warren', 'Watson', 'Waylon', 'Wayne', 'Webster', 'Weldon', 'Wellington', 'Wendell', 'Werner', 'Westley', 'Weston', 'Wilber', 'Wilbert', 'Wilburn', 'Wiley', 'Wilford', 'Wilfred', 'Wilfredo', 'Wilfrid', 'Wilhelm', 'Will', 'Willard', 'William', 'Willis', 'Willy', 'Wilmer', 'Wilson', 'Wilton', 'Winfield', 'Winston', 'Woodrow', 'Wyatt', 'Wyman',
         'Xavier', 'Xzavier', 'Xander',
         'Zachariah', 'Zachary', 'Zachery', 'Zack', 'Zackary', 'Zackery', 'Zakary', 'Zander', 'Zane', 'Zechariah', 'Zion',
-    );
-
+    ];
 
     protected static array $certificate = [
-        'دیپلم', 'لیسانس', 'فوق لیسانس', 'دکترا', 'سیکل'
+        'دیپلم', 'لیسانس', 'فوق لیسانس', 'دکترا', 'سیکل',
     ];
 
     protected static array $job = [
         'برنامه نوسی', 'مسئول پشتیبانی', 'فروشنده', 'بازاریاب', 'طراح',
-        'گرافیست', 'کارگردان', 'هنرپیشه', 'آرایشگر', 'خیاط', 'عکاس', 'ورزشکار', 'پلیس', 'استاد دانشگاه', 'معلم', 'پزشک', 'پرستار', 'مدیر', 'آشپز'
+        'گرافیست', 'کارگردان', 'هنرپیشه', 'آرایشگر', 'خیاط', 'عکاس', 'ورزشکار', 'پلیس', 'استاد دانشگاه', 'معلم', 'پزشک', 'پرستار', 'مدیر', 'آشپز',
     ];
 
     protected static array $operator = ['gmail.com', 'yahoo.com', 'outlook.com', 'mihanmail.ir', 'chmail.ir'];
@@ -207,11 +206,11 @@ class Person extends FakerProvider
 
     public static function email($operator = null): string
     {
-        if (!$operator) {
+        if (! $operator) {
             $operator = self::$operator[array_rand(self::$operator)];
         }
 
-        return self::randomElement(self::$firstNameMale) . rand(11111, 99999) . '@' . $operator;
+        return self::randomElement(self::$firstNameMale).rand(11111, 99999).'@'.$operator;
     }
 
     public function phone($operator = null): string
@@ -220,9 +219,10 @@ class Person extends FakerProvider
             'mci' => '0912',
             'rightel' => '0921',
             'irancell' => '0935',
-            default => '09' . mt_rand(10, 99),
+            default => '09'.mt_rand(10, 99),
         };
-        return $number . mt_rand(1000000, 9999999);
+
+        return $number.mt_rand(1000000, 9999999);
     }
 
     public function job(): string

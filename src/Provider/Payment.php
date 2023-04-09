@@ -28,13 +28,11 @@ class Payment extends FakerProvider
 
     public function cardNumber(): string
     {
-        return mt_rand(1111111111, 9999999999) . mt_rand(111111, 999999);
+        return mt_rand(1111111111, 9999999999).mt_rand(111111, 999999);
     }
 
     public function sheba(): string
     {
-      return 'IR'. mt_rand(1111111111, 9999999999) . mt_rand(1111111111, 9999999999) . mt_rand(1111, 9999);
+        return 'IR'.mt_rand(1111111111, 9999999999).mt_rand(1111111111, 9999999999).mt_rand(1111, 9999);
     }
-
-
 }

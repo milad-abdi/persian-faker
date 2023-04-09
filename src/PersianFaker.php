@@ -10,6 +10,6 @@ class PersianFaker
 
     public static function create(): Generator
     {
-       return self::$generator = new Generator();
+        return self::$generator = new Generator();
     }
 }

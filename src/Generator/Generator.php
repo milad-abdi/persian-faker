@@ -2,12 +2,11 @@
 
 namespace GlassCode\PersianFaker\Generator;
 
-
-use Illuminate\Support\Str;
 use GlassCode\PersianFaker\Provider\Location;
 use GlassCode\PersianFaker\Provider\Payment;
 use GlassCode\PersianFaker\Provider\Person;
 use GlassCode\PersianFaker\Provider\Text;
+use Illuminate\Support\Str;
 use Symfony\Component\Finder\Finder;
 
 /**
@@ -32,17 +31,17 @@ class Generator
 
     public function getProviderPath(): string
     {
-        $composerJsonPath = __DIR__ . '//..//..//composer.json';
-        $composerConfig   = json_decode(file_get_contents($composerJsonPath));
-        $srcNamespace     = array_keys(((array)$composerConfig->autoload->{'psr-4'}))[0];
+        $composerJsonPath = __DIR__.'//..//..//composer.json';
+        $composerConfig = json_decode(file_get_contents($composerJsonPath));
+        $srcNamespace = array_keys(((array) $composerConfig->autoload->{'psr-4'}))[0];
 
-        return $srcNamespace . 'Provider\\';
+        return $srcNamespace.'Provider\\';
     }
 
     public static function providers(): array
     {
-        $providers   = [];
-        $finderFiles = Finder::create()->in(__DIR__ . '//..//Provider//')->name('*.php')->files();
+        $providers = [];
+        $finderFiles = Finder::create()->in(__DIR__.'//..//Provider//')->name('*.php')->files();
 
         foreach ($finderFiles as $file) {
             $providers[] = $file->getFilename();
@@ -54,15 +53,14 @@ class Generator
     private function getParams($attribute)
     {
         foreach (self::providers() as $providerClass) {
+            $providerName = explode('.php', $providerClass)[0];
 
-            $providerName = explode('.php',$providerClass)[0];
-
-            if (method_exists(new ($this->getProviderPath() . $providerName), $attribute)) {
-                return (new ($this->getProviderPath() . $providerName))->$attribute();
+            if (method_exists(new ($this->getProviderPath().$providerName), $attribute)) {
+                return (new ($this->getProviderPath().$providerName))->$attribute();
             }
 
             if (Str::lower($providerName) == $attribute) {
-                return (new ($this->getProviderPath() . $providerName));
+                return new ($this->getProviderPath().$providerName);
             }
         }
 

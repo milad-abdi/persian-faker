@@ -2,9 +2,9 @@
 
 namespace GlassCode\PersianFaker\Tests;
 
+use GlassCode\PersianFaker\PersianFakerServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use GlassCode\PersianFaker\PersianFakerServiceProvider;
 
 class TestCase extends Orchestra
 {
