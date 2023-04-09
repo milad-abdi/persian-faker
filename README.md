@@ -16,13 +16,13 @@ composer require milad-abdi/persian-faker
 ## Usage
 
 
-Create fake data Use `Miladabdi\PersianFaker\PersianFaker` to create and initialize a faker generator, which can generate data by calling methods named after the type of data you want.
+Create fake data Use `GlassCode\PersianFaker\PersianFaker` to create and initialize a faker generator, which can generate data by calling methods named after the type of data you want.
 
 ## Example
 
 
 ```php
-$faker = \Miladabdi\PersianFaker\PersianFaker::create();
+$faker = \GlassCode\PersianFaker\PersianFaker::create();
 
 // simple text
 $faker->text()->word() //ساعت

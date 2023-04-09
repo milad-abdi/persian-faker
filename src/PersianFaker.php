@@ -1,8 +1,8 @@
 <?php
 
-namespace Miladabdi\PersianFaker;
+namespace GlassCode\PersianFaker;
 
-use Miladabdi\PersianFaker\Generator\Generator;
+use GlassCode\PersianFaker\Generator\Generator;
 
 class PersianFaker
 {

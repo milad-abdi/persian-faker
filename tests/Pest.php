@@ -1,5 +1,5 @@
 <?php
 
-use Miladabdi\PersianFaker\Tests\TestCase;
+use GlassCode\PersianFaker\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

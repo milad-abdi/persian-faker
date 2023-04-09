@@ -1,6 +1,6 @@
 <?php
 
-namespace Miladabdi\PersianFaker;
+namespace GlassCode\PersianFaker;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;

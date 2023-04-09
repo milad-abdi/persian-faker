@@ -1,6 +1,6 @@
 <?php
 
-use Miladabdi\PersianFaker\PersianFaker;
+use GlassCode\PersianFaker\PersianFaker;
 
 it('get bank',function (){
 

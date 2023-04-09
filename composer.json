@@ -1,8 +1,8 @@
 {
-    "name": "milad-abdi/persian-faker",
-    "description": "This is my package persian-faker",
+    "name": "glasscode/persian-faker",
+    "description": "generate any persian content for laravel community",
     "keywords": [
-        "milad-abdi",
+        "faker",
         "laravel",
         "persian-faker"
     ],
@@ -12,6 +12,11 @@
         {
             "name": "milad abdi",
             "email": "milad8742@gmail.com",
+            "role": "Developer"
+        },
+        {
+            "name": "mahdi mansouri",
+            "email": "mahdi.msr4@gmail.com",
             "role": "Developer"
         }
     ],
@@ -35,12 +40,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Miladabdi\\PersianFaker\\": "src"
+            "GlassCode\\PersianFaker\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Miladabdi\\PersianFaker\\Tests\\": "tests"
+            "GlassCode\\PersianFaker\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -60,10 +65,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Miladabdi\\PersianFaker\\PersianFakerServiceProvider"
+                "GlassCode\\PersianFaker\\PersianFakerServiceProvider"
             ],
             "aliases": {
-                "PersianFaker": "Miladabdi\\PersianFaker\\Facades\\PersianFaker"
+                "PersianFaker": "GlassCode\\PersianFaker\\Facades\\PersianFaker"
             }
         }
     },

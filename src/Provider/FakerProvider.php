@@ -1,6 +1,6 @@
 <?php
 
-namespace Miladabdi\PersianFaker\Provider;
+namespace GlassCode\PersianFaker\Provider;
 
 class FakerProvider
 {

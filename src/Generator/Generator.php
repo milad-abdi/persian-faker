@@ -1,13 +1,13 @@
 <?php
 
-namespace Miladabdi\PersianFaker\Generator;
+namespace GlassCode\PersianFaker\Generator;
 
 
 use Illuminate\Support\Str;
-use Miladabdi\PersianFaker\Provider\Location;
-use Miladabdi\PersianFaker\Provider\Payment;
-use Miladabdi\PersianFaker\Provider\Person;
-use Miladabdi\PersianFaker\Provider\Text;
+use GlassCode\PersianFaker\Provider\Location;
+use GlassCode\PersianFaker\Provider\Payment;
+use GlassCode\PersianFaker\Provider\Person;
+use GlassCode\PersianFaker\Provider\Text;
 use Symfony\Component\Finder\Finder;
 
 /**

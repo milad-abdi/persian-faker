@@ -1,10 +1,10 @@
 <?php
 
-namespace Miladabdi\PersianFaker\Tests;
+namespace GlassCode\PersianFaker\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Miladabdi\PersianFaker\PersianFakerServiceProvider;
+use GlassCode\PersianFaker\PersianFakerServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -13,7 +13,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Miladabdi\\PersianFaker\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'GlassCode\\PersianFaker\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 
