@@ -1,4 +1,4 @@
-# This is my package persian-faker
+# Laravel persian faker package
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/milad-abdi/persian-faker.svg?style=flat-square)](https://packagist.org/packages/milad-abdi/persian-faker)
 [![run-tests](https://github.com/milad-abdi/persian-faker/actions/workflows/run-tests.yml/badge.svg)](https://github.com/milad-abdi/persian-faker/actions/workflows/run-tests.yml)
