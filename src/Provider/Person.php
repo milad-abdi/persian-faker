@@ -204,7 +204,7 @@ class Person extends FakerProvider
         return self::randomElement(self::$certificate);
     }
 
-    public static function email($operator = null): string
+    public function email($operator = null): string
     {
         if (! $operator) {
             $operator = self::$operator[array_rand(self::$operator)];
