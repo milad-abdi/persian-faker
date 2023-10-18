@@ -10,6 +10,7 @@ class PersianFakerServiceProvider extends PackageServiceProvider
     public function configurePackage(Package $package): void
     {
         $package
+            ->hasConfigFile('persian_faker')
             ->name('persian-faker');
     }
 }
