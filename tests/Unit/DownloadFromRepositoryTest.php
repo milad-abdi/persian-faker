@@ -11,7 +11,7 @@ it('check repository url exists', function () {
         ->not()
         ->toBe(404);
 
-})->group('unit', 'downloader', 'unit.downloader');
+})->group('unit', 'download', 'unit.download');
 
 it('check test/inspiration.json exists in repository url', function () {
 
@@ -21,7 +21,7 @@ it('check test/inspiration.json exists in repository url', function () {
         ->not()
         ->toBe(404);
 
-})->group('unit', 'downloader', 'unit.downloader');
+})->group('unit', 'download', 'unit.download');
 
 it('download and save test/inspiration.json from repository url', function () {
 
@@ -38,4 +38,4 @@ it('download and save test/inspiration.json from repository url', function () {
     File::delete('data/inspiration.json');
     File::deleteDirectory('data');
 
-})->group('unit', 'downloader', 'unit.downloader');
+})->group('unit', 'download', 'unit.download');
