@@ -2,6 +2,7 @@
 
 namespace GlassCode\PersianFaker\Commands;
 
+use GlassCode\PersianFaker\Exceptions\PathNotExistsException;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
@@ -12,6 +13,9 @@ class DownloadCommand extends Command
 
     protected $description  = 'Download file exists in path to /data directory';
 
+    /**
+     * @throws \Throwable
+     */
     public function handle(): void
     {
         $path = $this->argument('path');
@@ -20,16 +24,26 @@ class DownloadCommand extends Command
 
         $response = Http::get($fullPath);
 
-        $jsonValue = json_decode($response->body());
+        if ($response->status() == 404){
 
-        File::ensureDirectoryExists('data');
+            $this->error("$fullPath not found");
+        }
 
-        // split path and get make collection name from it
-        // /test/inspiration.json ==> inspiration
+        if ($response->status() == 200){
 
-        $split = explode('/', $path);
-        $collectionName = $split[count($split) - 1];
+            $jsonValue = json_decode($response->body());
 
-        File::put("data/$collectionName", $jsonValue);
+            File::ensureDirectoryExists('data');
+
+            // split path and get make collection name from it
+            // /test/inspiration.json ==> inspiration
+
+            $split = explode('/', $path);
+            $collectionName = $split[count($split) - 1];
+
+            File::put("data/$collectionName", $jsonValue);
+
+            $this->info(str_replace('.json','',$collectionName) . 'faker synced successfully');
+        }
     }
 }
