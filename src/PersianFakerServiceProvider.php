@@ -2,6 +2,7 @@
 
 namespace GlassCode\PersianFaker;
 
+use GlassCode\PersianFaker\Commands\DownloadCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -11,6 +12,9 @@ class PersianFakerServiceProvider extends PackageServiceProvider
     {
         $package
             ->hasConfigFile('persian_faker')
+            ->hasCommands([
+                DownloadCommand::class,
+            ])
             ->name('persian-faker');
     }
 }
