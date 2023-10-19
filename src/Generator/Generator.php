@@ -2,6 +2,7 @@
 
 namespace GlassCode\PersianFaker\Generator;
 
+use GlassCode\PersianFaker\Provider\Lively;
 use GlassCode\PersianFaker\Provider\Location;
 use GlassCode\PersianFaker\Provider\Payment;
 use GlassCode\PersianFaker\Provider\Person;
@@ -16,6 +17,7 @@ use Symfony\Component\Finder\Finder;
  * @method Person person()
  * @method string productCategory()
  * @method string productTitle()
+ * @method Lively lively(string $filename)
  */
 class Generator
 {
@@ -26,7 +28,7 @@ class Generator
 
     public function __call(string $attribute, array $arguments)
     {
-        return $this->getParams($attribute);
+        return $this->getParams($attribute,$arguments);
     }
 
     public function getProviderPath(): string
@@ -50,8 +52,12 @@ class Generator
         return $providers;
     }
 
-    private function getParams($attribute)
+    private function getParams($attribute,?array $arguments = null)
     {
+        if ($attribute == 'lively'){
+            return new Lively($arguments[0]);
+        }
+
         foreach (self::providers() as $providerClass) {
             $providerName = explode('.php', $providerClass)[0];
 
