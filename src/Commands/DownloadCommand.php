@@ -41,7 +41,7 @@ class DownloadCommand extends Command
 
             File::put("data/$collectionName", $response->body());
 
-            $this->info(str_replace('.json','',$collectionName) . 'faker synced successfully');
+            $this->info(str_replace('.json','',$collectionName) . ' faker synced successfully');
         }
     }
 }
