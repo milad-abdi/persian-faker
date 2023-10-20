@@ -1,6 +1,5 @@
 <?php
 
-use GlassCode\PersianFaker\Exceptions\PathNotExistsException;
 use Illuminate\Support\Facades\File;
 use function Pest\Laravel\artisan;
 
