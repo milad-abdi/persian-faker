@@ -31,8 +31,6 @@ class DownloadCommand extends Command
 
         if ($response->status() == 200){
 
-            $jsonValue = json_decode($response->body());
-
             File::ensureDirectoryExists('data');
 
             // split path and get make collection name from it
@@ -41,7 +39,7 @@ class DownloadCommand extends Command
             $split = explode('/', $path);
             $collectionName = $split[count($split) - 1];
 
-            File::put("data/$collectionName", $jsonValue);
+            File::put("data/$collectionName", $response->body());
 
             $this->info(str_replace('.json','',$collectionName) . 'faker synced successfully');
         }
