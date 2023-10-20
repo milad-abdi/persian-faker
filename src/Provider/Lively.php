@@ -3,6 +3,8 @@
 namespace GlassCode\PersianFaker\Provider;
 
 use GlassCode\PersianFaker\Exception\FakerNotExistsException;
+use GlassCode\PersianFaker\Lively\LivelyAbstract;
+use GlassCode\PersianFaker\Lively\SimpleLively;
 use Illuminate\Support\Facades\File;
 
 class Lively extends FakerProvider
@@ -23,6 +25,13 @@ class Lively extends FakerProvider
 
     public function item(): mixed
     {
-        return self::randomElement($this->fileContent);
+        $item = self::randomElement($this->fileContent);
+
+        if (!is_array($item)){
+
+            return SimpleLively::from($item);
+        }
+
+        return $item;
     }
 }
