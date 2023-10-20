@@ -17,7 +17,7 @@ use Symfony\Component\Finder\Finder;
  * @method Person person()
  * @method string productCategory()
  * @method string productTitle()
- * @method Lively lively(string $filename)
+ * @method Lively lively(string $filename, string $livelyAbstract = null)
  */
 class Generator
 {
@@ -55,7 +55,16 @@ class Generator
     private function getParams($attribute,?array $arguments = null)
     {
         if ($attribute == 'lively'){
-            return new Lively($arguments[0]);
+
+            if (count($arguments) == 1){
+
+                return new Lively($arguments[0]);
+            }
+
+            if (count($arguments) == 2){
+
+                return new Lively($arguments[0], $arguments[1]);
+            }
         }
 
         foreach (self::providers() as $providerClass) {
