@@ -5,11 +5,12 @@ namespace GlassCode\PersianFaker\Provider;
 use GlassCode\PersianFaker\Exception\FakerNotExistsException;
 use GlassCode\PersianFaker\Lively\LivelyAbstract;
 use GlassCode\PersianFaker\Lively\SimpleLively;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
 
 class Lively extends FakerProvider
 {
-    protected mixed $fileContent;
+    protected Collection $fileContent;
     protected mixed $dataProvider;
 
     /**
@@ -21,13 +22,13 @@ class Lively extends FakerProvider
             throw FakerNotExistsException::jsonFileNotExists($filename);
         }
 
-        $this->fileContent = File::json('data/' . $filename);
+        $this->fileContent = Collection::make(File::json('data/' . $filename));
         $this->dataProvider = $livelyAbstract;
     }
 
     public function item(): mixed
     {
-        $item = self::randomElement($this->fileContent);
+        $item = self::randomElement($this->fileContent->toArray());
 
         if (!$this->dataProvider){
 
