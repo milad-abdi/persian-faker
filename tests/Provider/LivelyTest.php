@@ -60,3 +60,18 @@ it('download names objects from repo and get object as LivelyAbstract.php instan
     File::deleteDirectory('data');
 
 })->group('provider', 'lively', 'provider.lively');
+
+it('download names from repo and filter it by gender and get only other gender then get name of random item as string', function () {
+
+    File::deleteDirectory('data');
+
+    artisan('lively:download test/names.json');
+
+    $item = PersianFaker::create()->lively('names.json', NameLively::class)->filter('gender','other')->item();
+
+    expect($item->name())
+        ->toBe('other_test_name');
+
+    File::deleteDirectory('data');
+
+})->group('provider', 'lively', 'provider.lively');

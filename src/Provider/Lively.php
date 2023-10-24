@@ -29,6 +29,13 @@ class Lively extends FakerProvider
         return new self();
     }
 
+    public function filter(string $key, mixed $value): static
+    {
+        self::$fileContent = self::$fileContent->where($key,$value);
+
+        return new self();
+    }
+
     public function item(): mixed
     {
         $item = self::randomElement(self::$fileContent->toArray());
