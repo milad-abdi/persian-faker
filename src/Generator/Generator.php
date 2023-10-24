@@ -58,12 +58,12 @@ class Generator
 
             if (count($arguments) == 1){
 
-                return new Lively($arguments[0]);
+                return Lively::from($arguments[0]);
             }
 
             if (count($arguments) == 2){
 
-                return new Lively($arguments[0], $arguments[1]);
+                return Lively::from($arguments[0], $arguments[1]);
             }
         }
 

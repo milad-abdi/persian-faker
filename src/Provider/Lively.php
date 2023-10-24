@@ -10,31 +10,34 @@ use Illuminate\Support\Facades\File;
 
 class Lively extends FakerProvider
 {
-    protected Collection $fileContent;
-    protected mixed $dataProvider;
+    protected static Collection $fileContent;
+    protected static mixed $dataProvider;
+    protected static array $filters;
 
     /**
      * @throws FakerNotExistsException
      */
-    public function __construct(string $filename, string $livelyAbstract = null) {
+    public static function from(string $filename, string $livelyAbstract = null): static {
 
         if (!File::exists('data/' . $filename)){
             throw FakerNotExistsException::jsonFileNotExists($filename);
         }
 
-        $this->fileContent = Collection::make(File::json('data/' . $filename));
-        $this->dataProvider = $livelyAbstract;
+        self::$fileContent = Collection::make(File::json('data/' . $filename));
+        self::$dataProvider = $livelyAbstract;
+
+        return new self();
     }
 
     public function item(): mixed
     {
-        $item = self::randomElement($this->fileContent->toArray());
+        $item = self::randomElement(self::$fileContent->toArray());
 
-        if (!$this->dataProvider){
+        if (!self::$dataProvider){
 
             return SimpleLively::from($item);
         }
 
-        return call_user_func([$this->dataProvider, 'from'],$item);
+        return call_user_func([self::$dataProvider, 'from'],$item);
     }
 }
