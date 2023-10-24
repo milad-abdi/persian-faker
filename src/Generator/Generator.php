@@ -2,6 +2,7 @@
 
 namespace GlassCode\PersianFaker\Generator;
 
+use GlassCode\PersianFaker\Exception\FakerNotExistsException;
 use GlassCode\PersianFaker\Provider\Lively;
 use GlassCode\PersianFaker\Provider\Location;
 use GlassCode\PersianFaker\Provider\Payment;
@@ -52,7 +53,10 @@ class Generator
         return $providers;
     }
 
-    private function getParams($attribute,?array $arguments = null)
+    /**
+     * @throws FakerNotExistsException
+     */
+    private function getParams($attribute, ?array $arguments = null)
     {
         if ($attribute == 'lively'){
 
